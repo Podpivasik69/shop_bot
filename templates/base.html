@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SKET Shop{% endblock %}</title>
+
+    {% load static %}
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="{% static 'products/css/catalog.css' %}?v=3.0">
+    <!-- Стили футера (добавим позже) -->
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+<!-- Основной контент -->
+<main class="main-content">
+    {% block content %}
+    <!-- Сюда будет подставляться контент страниц -->
+    {% endblock %}
+</main>
+
+<!-- ФИКСИРОВАННЫЙ ФУТЕР -->
+<footer class="main-footer">
+    <div class="footer-grid">
+        <!-- Каталог -->
+        <a href="{% url 'products:catalog' %}"
+           class="footer-item {% if request.path == '/' %}active{% endif %}"
+           id="footer-catalog">
+            <div class="footer-icon">🏪</div>
+            <div class="footer-label">Каталог</div>
+        </a>
+
+        <!-- Корзина (заглушка) -->
+        <a href="{% url 'products:cart' %}"
+           class="footer-item {% if '/cart/' in request.path %}active{% endif %}"
+           id="footer-cart">
+            <div class="footer-icon">🛒</div>
+            <div class="footer-label">Корзина</div>
+        </a>
+
+        <!-- Заказы -->
+        <a href="{% url 'orders:my_orders' %}"
+           class="footer-item {% if '/orders/' in request.path %}active{% endif %}"
+           id="footer-orders">
+            <div class="footer-icon">📦</div>
+            <div class="footer-label">Заказы</div>
+        </a>
+
+        <!-- Профиль (заглушка) -->
+        <a href="{% url 'products:profile' %}"
+           class="footer-item {% if '/profile/' in request.path %}active{% endif %}"
+           id="footer-profile">
+            <div class="footer-icon">👤</div>
+            <div class="footer-label">Профиль</div>
+        </a>
+    </div>
+</footer>
+
+{% block extra_js %}{% endblock %}
+</body>
+</html>

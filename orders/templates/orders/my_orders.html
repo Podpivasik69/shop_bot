@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои заказы</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'orders/css/my_orders.css' %}">
+</head>
+<body>
+<div class="orders-container">
+    <a href="/" class="back-link">← Назад в каталог</a>
+    <h1 class="page-title">Мои заказы</h1>
+
+    {% if orders %}
+    {% for order in orders %}
+    <div class="order-card">
+        <div class="order-header">
+            <div class="order-id">Заказ #{{ order.id }}</div>
+            <div class="order-status status-{{ order.status }}">
+                {{ order.get_status_display }}
+            </div>
+        </div>
+
+        <div class="order-product">
+            <img src="{{ order.product.main_image.url }}" alt="{{ order.product.name }}" class="product-image">
+            <div class="product-info">
+                <h3>{{ order.product.name }}</h3>
+                <div class="product-details">
+                    Размер: {{ order.selected_size }} • {{ order.product.price|floatformat:"0" }} ₽
+                </div>
+            </div>
+        </div>
+
+        <div class="order-meta">
+            <div class="meta-item">
+                <span class="meta-label">ФИО:</span>
+                <span class="meta-value">{{ order.customer_full_name }}</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Телефон:</span>
+                <span class="meta-value">{{ order.phone }}</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Дата:</span>
+                <span class="meta-value">{{ order.created_at|date:"d.m.Y H:i" }}</span>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="no-orders">
+        <p>У вас пока нет заказов</p>
+        <a href="/">Перейти в каталог</a>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>

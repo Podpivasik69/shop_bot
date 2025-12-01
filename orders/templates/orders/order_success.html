@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказ оформлен!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'orders/css/order_success.css' %}">
+</head>
+<body>
+<div class="success-container">
+    <div class="success-icon">✅</div>
+    <h1>Заказ оформлен!</h1>
+    <p>Мы свяжемся с вами в Telegram в ближайшее время</p>
+
+    <div class="order-info">
+        <h2>Детали заказа</h2>
+        <p><strong>Товар:</strong> {{ order.product.name }}</p>
+        <p><strong>Размер:</strong> {{ order.selected_size }}</p>
+        <p><strong>ФИО:</strong> {{ order.customer_full_name }}</p>
+        <p><strong>Телефон:</strong> {{ order.phone }}</p>
+        <p><strong>Адрес СДЭК:</strong> {{ order.cdek_address }}</p>
+    </div>
+
+    <div class="actions">
+        <a href="{% url 'products:catalog' %}" class="btn-primary">Вернуться в каталог</a>
+        <a href="{% url 'orders:my_orders' %}" class="btn-secondary">Мои заказы</a>
+    </div>
+</div>
+</body>
+</html>

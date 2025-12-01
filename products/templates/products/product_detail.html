@@ -1,0 +1,86 @@
+<!-- products/templates/products/product_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }} - SKET</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'products/css/product_detail.css' %}">
+</head>
+<body>
+<div class="product-detail">
+    <!-- Галерея -->
+    <div class="gallery-container">
+        <div class="gallery-track" id="gallery-track">
+            <div class="slide">
+                <img src="{{ product.main_image.url }}" alt="{{ product.name }}">
+            </div>
+            {% for image in product.additional_images.all %}
+            <div class="slide">
+                <img src="{{ image.image.url }}" alt="{{ product.name }}">
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="gallery-indicator">
+            <span id="current-slide">1</span>
+            <span>/</span>
+            <span id="total-slides">{{ product.additional_images.all|length|add:1 }}</span>
+        </div>
+    </div>
+
+    <!-- Заголовок -->
+    <h1 class="product-title">{{ product.name }}</h1>
+
+    <!-- ОТДЕЛЬНЫЙ БЛОК ЦЕНЫ -->
+    <div class="price-block">
+        <div class="price-row">
+            <div class="product-price">{{ product.price|floatformat:"0" }} ₽</div>
+        </div>
+    </div>
+
+    <!-- НОВЫЙ БЛОК: НАЛИЧИЕ ТОВАРА -->
+    <div class="availability-block">
+        {% if product.availability_type == 'preorder' %}
+        <div class="availability-badge preorder">
+            ✅ Доступен для предзаказа
+        </div>
+        {% else %}
+        <div class="availability-badge in-stock">
+            ✅ В наличии: {{ product.stock_quantity }} шт.
+        </div>
+        {% endif %}
+    </div>
+    <!-- КОНЕЦ БЛОКА НАЛИЧИЯ -->
+
+    <!-- Информация -->
+    <div class="info-card">
+        <div class="meta-item">
+            <span class="label">Состояние</span>
+            <span class="value">{{ product.condition }}</span>
+        </div>
+        <div class="meta-item">
+            <span class="label">Размер</span>
+            <span class="value">{{ product.size }}</span>
+        </div>
+    </div>
+
+    <!-- ОТДЕЛЬНЫЙ БЛОК ОПИСАНИЯ -->
+    {% if product.description %}
+    <div class="description-block">
+        <div class="description-content">
+            {{ product.description|linebreaks }}
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Кнопка покупки -->
+<button class="buy-button-fixed" onclick="window.location.href='{% url 'orders:create_order' product.id %}'">
+    🛒 Купить сейчас
+</button>
+
+<script src="{% static 'products/js/product_detail.js' %}"></script>
+</body>
+</html>
