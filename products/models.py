@@ -20,7 +20,7 @@ class Product(models.Model):
         ('in_stock', 'Есть на складе'),
     ]
     name = models.CharField("Название", max_length=200)  # Название (обязательно)
-    price = models.DecimalField("Цена", max_digits=10, decimal_places=2)  # Цена (обязательно)
+    price = models.DecimalField("Цена", max_digits=10, decimal_places=0)  # Цена (обязательно)
     condition = models.CharField("Состояние", max_length=100)  # Состояние (обязательно) - менеджер пишет сам
     size = models.CharField("Размер", max_length=50)  # Размер (обязательно) - менеджер пишет сам
     description = models.TextField("Описание", blank=True)  # Описание (не обязательно)

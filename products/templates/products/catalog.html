@@ -1,50 +1,38 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% load static %}
+{% block title %}SKET Shop - Каталог{% endblock %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKET shop - Каталог</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'products/css/catalog.css' %}?v=2.0">
-</head>
-<body>
-<!-- Кнопка Мои заказы -->
-{% if orders_count > 0 %}
-<a href="{% url 'orders:my_orders' %}" class="orders-floating-button">
-    <div class="orders-icon">📦</div>
-    <div class="orders-badge">{{ orders_count }}</div>
-</a>
-{% endif %}
-
+{% block content %}
+<!-- Горизонтальный скролл категорий -->
 <div class="categories-scroll">
-
     <!-- Категория "Все" -->
-    <a href="?category=" class="category-item {% if not active_category %}active{% endif %}">
+    <a href="?category=" class="category-item clickable {% if not active_category %}active{% endif %}">
         Все
     </a>
 
     <!-- Список категорий -->
     {% for category in categories %}
     <a href="?category={{ category.slug }}"
-       class="category-item {% if active_category == category.slug %}active{% endif %}">
+       class="category-item clickable {% if active_category == category.slug %}active{% endif %}">
         {{ category.name }}
     </a>
     {% endfor %}
 </div>
 
+<!-- Сетка товаров -->
 <div class="products-grid">
     {% for product in products %}
-    <div class="product-card" onclick="window.location.href='{% url 'products:product_detail' product.id %}'">
+    <div class="product-card clickable" onclick="window.location.href='{% url 'products:product_detail' product.id %}'">
         <!-- Фото товара -->
         <img src="{{ product.main_image.url }}" alt="{{ product.name }}">
 
         <!-- Информация о товаре -->
         <div class="product-info">
-            <h3>{{ product.name }}</h3>
-            <p class="price">{{ product.price }} ₽</p>
+            <h3 class="product-name">{{ product.name }}</h3>
+            <p class="product-price">{{ product.price|floatformat:"0"|intcomma }} ₽</p>
 
-            <!-- СЮДА ДОБАВЛЯЕМ БЛОК НАЛИЧИЯ -->
+            <!-- Блок наличия -->
             <div class="product-availability">
                 {% if product.availability_type == 'preorder' %}
                 <span class="badge preorder">Предзаказ</span>
@@ -52,10 +40,10 @@
                 <span class="badge in-stock">В наличии: {{ product.stock_quantity }} шт.</span>
                 {% endif %}
             </div>
-            <!-- КОНЕЦ БЛОКА НАЛИЧИЯ -->
         </div>
     </div>
     {% endfor %}
 </div>
-</body>
-</html>
+{% endblock %}
+{% block extra_js %}
+{% endblock %}

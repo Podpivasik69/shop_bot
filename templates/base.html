@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{% static 'products/css/catalog.css' %}?v=3.0">
     <!-- Стили футера (добавим позже) -->
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <!-- Глобальные стили -->
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
 
     {% block extra_css %}{% endblock %}
 </head>
@@ -32,8 +34,8 @@
             <div class="footer-label">Каталог</div>
         </a>
 
-        <!-- Корзина (заглушка) -->
-        <a href="{% url 'products:cart' %}"
+        <!-- Корзина -->
+        <a href="{% url 'cart:cart' %}"
            class="footer-item {% if '/cart/' in request.path %}active{% endif %}"
            id="footer-cart">
             <div class="footer-icon">🛒</div>
@@ -48,8 +50,8 @@
             <div class="footer-label">Заказы</div>
         </a>
 
-        <!-- Профиль (заглушка) -->
-        <a href="{% url 'products:profile' %}"
+        <!-- Профиль -->
+        <a href="{% url 'user_profile:profile' %}"
            class="footer-item {% if '/profile/' in request.path %}active{% endif %}"
            id="footer-profile">
             <div class="footer-icon">👤</div>

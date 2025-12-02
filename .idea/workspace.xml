@@ -5,68 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de85cfbd-0f1c-4843-b9f3-382150d11544" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shop_bot.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/management/commands/debug_telegram.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/management/commands/test_telegram.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/static/orders/css/my_orders.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/static/orders/css/order_form.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/static/orders/css/order_success.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/static/orders/js/order_form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/telegram_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/templates/orders/create_order.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/templates/orders/my_orders.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/templates/orders/order_error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/templates/orders/order_success.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0002_rename_image_product_main_image_product_condition_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0003_product_availability_type_product_stock_quantity.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0004_alter_category_name_alter_category_slug_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/static/products/css/catalog.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/static/products/css/product_detail.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/static/products/js/product_detail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/templates/products/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/templates/products/catalog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/templates/products/product_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop_bot/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop_bot/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop_bot/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop_bot/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop_bot/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/templates/cart/stub.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/global.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_profile/templates/user_profile/stub.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_profile/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/static/orders/css/my_orders.css" beforeDir="false" afterPath="$PROJECT_DIR$/orders/static/orders/css/my_orders.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/templates/orders/my_orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/orders/templates/orders/my_orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/static/products/css/catalog.css" beforeDir="false" afterPath="$PROJECT_DIR$/products/static/products/css/catalog.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/static/products/css/product_detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/products/static/products/css/product_detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/static/products/js/product_detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/products/static/products/js/product_detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/templates/products/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/products/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/templates/products/catalog.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/products/catalog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/templates/products/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/products/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop_bot/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop_bot/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop_bot/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop_bot/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,14 +39,20 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
+        <option value="TypeScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -108,7 +74,7 @@
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;footer-experiment&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/mixai/PycharmProjects/shop_bot&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -176,12 +142,36 @@
       <workItem from="1764433261067" duration="12149000" />
       <workItem from="1764496715591" duration="8028000" />
       <workItem from="1764607446132" duration="1073000" />
-      <workItem from="1764610017462" duration="5889000" />
+      <workItem from="1764610017462" duration="8108000" />
+      <workItem from="1764669707124" duration="8030000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="footer-experiment" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/shop_bot$main.coverage" NAME="main Coverage Results" MODIFIED="1764436872180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

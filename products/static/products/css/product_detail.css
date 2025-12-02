@@ -1,3 +1,82 @@
+/* products/static/products/css/product_detail.css */
+/* СБРОС ДЛЯ КАТАЛОГА */
+body {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Исправляем категории */
+.categories-scroll {
+    padding: 16px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Исправляем сетку товаров */
+.products-grid {
+    padding: 16px;
+    margin: 0;
+}
+
+/* ===== ПЛАВАЮЩАЯ КНОПКА "НАЗАД" ===== */
+#back-to-catalog {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, rgba(80, 80, 80, 0.95), rgba(110, 110, 110, 0.95));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+    z-index: 1001;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#back-to-catalog:hover {
+    transform: scale(1.08);
+    background: linear-gradient(135deg, rgba(70, 70, 70, 0.95), rgba(100, 100, 100, 0.95));
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+#back-to-catalog:active {
+    transform: scale(0.96);
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+    #back-to-catalog {
+        width: 46px;
+        height: 46px;
+        font-size: 22px;
+        top: 12px;
+        left: 12px;
+    }
+}
+
+a#back-to-catalog.floating-back-button:hover {
+    background: rgba(96, 96, 96, 0.85) !important;
+    transform: scale(1.05) !important;
+}
+
+a#back-to-catalog.floating-back-button:active {
+    transform: scale(0.95) !important;
+}
+
 /* product_detail.css */
 body {
     margin: 0;
@@ -142,4 +221,65 @@ body {
     background-color: #f0fdf4;
     color: #166534;
     border: 1px solid #bbf7d0;
+}
+
+/* ===== Плавающая кнопка "Назад" ===== */
+.floating-back-button {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    width: 48px;
+    height: 48px;
+    background: rgba(128, 128, 128, 0.7); /* Серый полупрозрачный */
+    backdrop-filter: blur(10px); /* Эффект размытия фона */
+    -webkit-backdrop-filter: blur(10px); /* Для Safari */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 1001; /* Выше, чем кнопка покупки (z-index: 1000) */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.floating-back-button:hover {
+    background: rgba(96, 96, 96, 0.85);
+    transform: scale(1.05);
+}
+
+.floating-back-button:active {
+    transform: scale(0.95);
+}
+
+/* Адаптивность для маленьких экранов */
+@media (max-width: 480px) {
+    .floating-back-button {
+        width: 44px;
+        height: 44px;
+        font-size: 22px;
+        top: 12px;
+        left: 12px;
+    }
+}
+
+/* Анимация появления кнопки */
+#back-to-catalog {
+    animation: fadeInSlide 0.3s ease-out;
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-20px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
 }

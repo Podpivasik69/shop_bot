@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="{% static 'products/css/product_detail.css' %}">
 </head>
 <body>
+<!-- Плавающая кнопка "Назад" -->
+<a href="#" id="back-to-catalog" onclick="goBackToCatalog(event); return false;">
+    ←
+</a>
 <div class="product-detail">
     <!-- Галерея -->
     <div class="gallery-container">
@@ -80,7 +84,16 @@
 <button class="buy-button-fixed" onclick="window.location.href='{% url 'orders:create_order' product.id %}'">
     🛒 Купить сейчас
 </button>
-
-<script src="{% static 'products/js/product_detail.js' %}"></script>
 </body>
+<!-- ПОДКЛЮЧАЕМ СКРИПТ С ГАЛЕРЕЕЙ И НАВИГАЦИЕЙ -->
+<script>
+    function goBackToCatalog(event) {
+        event.preventDefault();
+
+        // Простой возврат (пока без сохранения позиции)
+        window.history.back();
+        return false;
+    }
+</script>
+<script src="{% static 'products/js/product_detail.js' %}"></script>
 </html>

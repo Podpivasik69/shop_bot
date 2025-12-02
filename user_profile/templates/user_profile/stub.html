@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="stub-container">
+    <h1>{{ title }}</h1>
+    <p>{{ message }}</p>
+    <a href="{{ back_url }}" class="back-button">← Назад</a>
+</div>
+{% endblock %}

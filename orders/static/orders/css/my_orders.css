@@ -6,8 +6,9 @@ body {
 }
 
 .orders-container {
-    max-width: 500px;
+    max-width: 800px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 .page-title {
@@ -123,4 +124,8 @@ body {
     color: #666;
     text-decoration: none;
     font-size: 15px;
+}
+
+.main-content {
+    padding-bottom: 80px;
 }

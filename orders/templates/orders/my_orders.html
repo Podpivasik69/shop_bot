@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мои заказы</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'orders/css/my_orders.css' %}">
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Мои заказы{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'orders/css/my_orders.css' %}">
+{% endblock %}
+
+{% block content %}
 <div class="orders-container">
     <a href="/" class="back-link">← Назад в каталог</a>
     <h1 class="page-title">Мои заказы</h1>
@@ -55,5 +55,4 @@
     </div>
     {% endif %}
 </div>
-</body>
-</html>
+{% endblock %}

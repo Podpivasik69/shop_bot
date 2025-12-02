@@ -1,0 +1,27 @@
+/* static/css/global.css */
+
+/* 1. Убираем голубую подсветку при тапе */
+* {
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+}
+
+/* 2. Упрощенная базовая анимация ТОЛЬКО для transform и opacity */
+.clickable {
+    transition: transform 0.08s ease-out, opacity 0.08s ease-out;
+    /* Убираем position: relative и overflow - они больше не нужны */
+}
+
+/* 3. ОДИН универсальный эффект нажатия для ВСЕХ элементов */
+.clickable:active {
+    opacity: 0.85;
+    transform: scale(0.97);
+}
+
+/* 4. УДАЛЯЕМ все остальные специфичные правила (:active) */
+/* Они больше не нужны, т.к. у нас один универсальный эффект */
+
+/* 5. Для футера - добавляем легкий цвет фона при нажатии */
+.footer-item.clickable:active {
+    background-color: rgba(0, 123, 255, 0.05); /* Почти незаметный голубой оттенок */
+}

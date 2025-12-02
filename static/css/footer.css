@@ -6,10 +6,10 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 70px; /* Увеличили высоту */
     background: white;
     border-top: 1px solid #e0e0e0;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1); /* Более заметная тень */
     z-index: 1000;
 }
 
@@ -18,18 +18,28 @@
     grid-template-columns: repeat(4, 1fr);
     height: 100%;
     align-items: center;
+    padding: 0 10px; /* Добавили отступы по бокам */
 }
 
 .footer-item {
     display: flex;
+    -webkit-tap-highlight-color: transparent;
     flex-direction: column;
     align-items: center;
+    user-select: none;
+    tap-highlight-color: transparent;
     justify-content: center;
     text-decoration: none;
     color: #666;
     height: 100%;
     transition: all 0.2s ease;
     position: relative;
+    padding: 8px 0; /* Добавили отступы */
+}
+
+/* Убираем outline при фокусе (для десктопов) */
+.footer-item:focus {
+    outline: none;
 }
 
 .footer-item:hover {
@@ -52,18 +62,26 @@
 }
 
 .footer-icon {
-    font-size: 20px;
-    margin-bottom: 2px;
+    font-size: 22px; /* Увеличили иконки */
+    margin-bottom: 4px; /* Больше отступ под иконкой */
 }
 
 .footer-label {
-    font-size: 11px;
+    font-size: 12px; /* Увеличили текст */
     font-weight: 500;
 }
 
 /* ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ ОСНОВНОГО КОНТЕНТА */
+body {
+    margin: 0;
+    /*padding: 20px; !* ← ДОБАВЛЯЕМ отступы как в заказах *!*/
+    background: #f8f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
 .main-content {
-    padding-bottom: 70px; /* Чтобы контент не скрывался под футером */
+    padding-bottom: 80px;
+    min-height: calc(100vh - 70px);
 }
 
 /* АДАПТИВНОСТЬ */
@@ -76,3 +94,84 @@
         font-size: 18px;
     }
 }
+
+/* Стили для заглушек */
+.stub-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    text-align: center;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stub-container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.stub-container p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.back-button:hover {
+    background: #0056b3;
+}
+
+/* Улучшенные стили для всех страниц */
+.main-content {
+    padding-bottom: 80px;
+    min-height: calc(100vh - 70px);
+    background: #f8f9fa; /* Легкий фон для всех страниц */
+}
+
+/* Анимация для активного футера */
+.footer-item.active .footer-icon {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+/* Эффект при наведении */
+.footer-item:hover .footer-icon {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+}
+
+/* Улучшенная активная полоска */
+.footer-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    right: 20%;
+    height: 3px;
+    background: linear-gradient(90deg, #007bff, #00bfff);
+    border-radius: 3px 3px 0 0;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+

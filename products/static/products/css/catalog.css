@@ -1,10 +1,22 @@
 /* products/static/products/css/catalog.css */
+
+/* УБИРАЕМ старые стили body */
+/* ВМЕСТО них: */
+/*.main-content {*/
+/*    background: #ffffff;*/
+/*    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;*/
+/*    min-height: calc(100vh - 70px); !* 70px вместо 60px *!*/
+/*    padding-bottom: 80px; !* Добавили дополнительный отступ *!*/
+/*}*/
+
+
+/* ЖЕСТКИЙ СБРОС */
 body {
-    margin: 0;
-    padding: 0;
+    all: unset;
+    padding: 0 !important;
+    margin: 0 !important;
     background: #ffffff;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    padding-bottom: 20px;
 }
 
 /* Горизонтальный скролл категорий */
@@ -50,17 +62,13 @@ body {
     padding: 16px;
 }
 
-.product-link {
-    text-decoration: none;
-    color: inherit;
-}
-
 .product-card {
     background: white;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
+    cursor: pointer;
 }
 
 .product-card:hover {
@@ -82,64 +90,34 @@ body {
     line-height: 1.3;
 }
 
-.product-details {
-    font-size: 12px;
-    color: #666;
-    margin: 0 12px 6px 12px;
-}
-
 .product-price {
     font-size: 16px;
     font-weight: 700;
     color: #1a1a1a;
+    margin: 0 12px 8px 12px;
+}
+
+/* Блок наличия товара */
+.product-availability {
     margin: 0 12px 12px 12px;
 }
 
-/* Плавающая кнопка заказов */
-.orders-floating-button {
-    position: fixed;
-    /* БЫЛО: top: 20px; */
-    /* СТАЛО: ниже блока категорий + 20px */
-    /* Категории: padding 16px + высота контента ~44px = ~60px */
-    top: 80px;  /* 60px + 20px = 80px */
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background: #007bff;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-
-.orders-floating-button:hover {
-    background: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
-}
-
-.orders-icon {
-    font-size: 20px;
-    color: white;
-}
-
-.orders-badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background: #dc3545;
-    color: white;
-    border-radius: 10px;
-    min-width: 20px;
-    height: 20px;
-    font-size: 12px;
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 11px;
     font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid white;
+}
+
+.badge.preorder {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.badge.in-stock {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
 }
