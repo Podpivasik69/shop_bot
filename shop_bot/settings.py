@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-%pbq^^3_+da4tl%m&)1sti6re#x_v%mmply*(je=6u*kp8%$+f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sket.38.180.203.120.sslip.io', '38.180.203.120', 'localhost', '127.0.0.1']
 
 # Application definition
 
