@@ -62,4 +62,28 @@
 
 {% block extra_js %}{% endblock %}
 </body>
+<!-- Telegram WebApp SDK + простой код -->
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Проверяем что в Telegram WebApp
+        if (window.Telegram && Telegram.WebApp) {
+            const user = Telegram.WebApp.initDataUnsafe.user;
+            if (user && user.id) {
+                // Просто отправляем, не ждем ответа
+                fetch('/api/telegram-user/', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        telegram_id: String(user.id),  // Обязательно строка!
+                        username: user.username || '',
+                        first_name: user.first_name || '',
+                        last_name: user.last_name || '',
+                        photo_url: user.photo_url || ''
+                    })
+                }).catch(error => console.log('Telegram sync error:', error));
+            }
+        }
+    });
+</script>
 </html>

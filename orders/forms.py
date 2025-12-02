@@ -41,3 +41,11 @@ class OrderForm(forms.ModelForm):
                 'class': 'form-textarea'
             }),
         }
+
+    # НОВЫЙ МЕТОД: настройка поля tg_username в зависимости от контекста
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Если поле уже имеет значение (автозаполнено), делаем его readonly
+        if self.initial.get('tg_username'):
+            self.fields['tg_username'].widget.attrs['readonly'] = True
+            self.fields['tg_username'].widget.attrs['title'] = 'Заполнено из вашего профиля Telegram'

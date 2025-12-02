@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'user_profile',
+    'telegram_bot',
     'products',
     'orders',
     'cart',

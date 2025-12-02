@@ -1,3 +1,4 @@
+# orders/models.py
 from django.db import models
 from products.models import Product
 
@@ -19,6 +20,16 @@ class Order(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='new')
     comment = models.TextField(blank=True, verbose_name="Комментарий")
     created_at = models.DateTimeField(auto_now_add=True)
+
+    # НОВОЕ ПОЛЕ: связь с пользователем Telegram (будет использоваться позже)
+    # TODO: Раскомментировать после реализации TelegramUser
+    user = models.ForeignKey(
+        'user_profile.TelegramUser',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        verbose_name="Пользователь Telegram"
+    )
 
     def __str__(self):
         return f"Заказ #{self.id} - {self.product.name}"
