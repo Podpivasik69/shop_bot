@@ -131,3 +131,16 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Безопасность для HTTPS (добавить в конец файла перед последними настройками)
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = False  # Nginx уже делает редирект
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+# CSRF trusted origins
+CSRF_TRUSTED_ORIGINS = [
+    'https://sket.38.180.203.120.sslip.io',
+    'https://38.180.203.120',
+]
